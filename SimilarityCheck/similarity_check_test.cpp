@@ -3,15 +3,18 @@
 
 using namespace testing;
 
-TEST(SimilarityCheck, same_length_check_tc)
-{
+class SimilarityCheckerTixture : public Test {
+public:
 	SimilarityChecker checker;
+};
+
+TEST_F(SimilarityCheckerTixture, same_length_check_tc)
+{
 	EXPECT_EQ(checker.checkLength("qwe", "wer"), Score::Same_Length);
 }
 
-TEST(SimilarityCheck, diggerent_length_check_tc)
+TEST_F(SimilarityCheckerTixture, diggerent_length_check_tc)
 {
-	SimilarityChecker checker;
 	EXPECT_EQ(checker.checkLength("abc", "defg"), 40);
 	EXPECT_EQ(checker.checkLength("ab", "cde"), 30);
 	EXPECT_EQ(checker.checkLength("ab", "cdef"), 0);
