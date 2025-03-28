@@ -6,7 +6,7 @@ using namespace testing;
 TEST(SimilarityCheck, length_check_tc)
 {
 	SimilarityChecker checker;
-	EXPECT_EQ(checker.checkLength("qwe", "wer"), 60);
+	EXPECT_EQ(checker.checkLength("qwe", "wer"), Score::Length);
 }
 
 int main() {

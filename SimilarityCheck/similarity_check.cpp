@@ -1,12 +1,15 @@
 #include <string>
 
-using std::string;
+enum Score {
+	Length = 60
+};
 
 class SimilarityChecker
 {
 public:
-	int checkLength(string str1, string str2)
+	int checkLength(std::string str1, std::string str2)
 	{
-		return 60;
+		return Score::Length;
 	}
+
 };
