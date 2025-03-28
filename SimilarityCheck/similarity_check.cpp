@@ -2,7 +2,7 @@
 
 enum Score {
 	Same_Length = 60,
-	Diffent_Length = 0
+	Twice_Larger_Length = 0
 };
 
 class SimilarityChecker
@@ -17,8 +17,8 @@ public:
 		if (isSameLength(length1, length2))
 			return Score::Same_Length;
 
-		if (isDifferentLength(length1, length2))
-			return Score::Diffent_Length;
+		if (is2timesLargerthan(length1, length2))
+			return Score::Twice_Larger_Length;
 
 		return getPartialScore(length1, length2);
 	}
@@ -28,7 +28,7 @@ public:
 		return (length1 == length2);
 	}
 
-	bool isDifferentLength(int length1, int length2)
+	bool is2timesLargerthan(int length1, int length2)
 	{
 		return (length1 >= (length2 * 2)) || (length2 >= (length1 * 2));
 	}
